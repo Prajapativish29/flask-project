@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # MongoDB Atlas Connection
 # Replace with your actual MongoDB Atlas connection string
-MONGO_URI = "mongodb+srv://prajapativish29:17101QXCFXeaNmAJ@flask-app.ydoa1hf.mongodb.net/?retryWrites=true&w=majority&appName=flask-app"
+MONGO_URI = "mongodb+srv://<your_username>:<your_password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority"
 try:
     client = MongoClient(MONGO_URI)
     db = client.flask_db # Choose a database name
