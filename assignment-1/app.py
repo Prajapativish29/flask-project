@@ -5,13 +5,11 @@ app = Flask(__name__)
 
 @app.route('/api/items', methods=['GET'])
 def get_items():
-    """
-    Reads data from data.json and returns it as a JSON list.
-    """
+    
     try:
-        with open('data.json', 'r') as f: # 
-            data = json.load(f) # 
-        return jsonify(data) # 
+        with open('data.json', 'r') as f: 
+            data = json.load(f) 
+        return jsonify(data) 
     except FileNotFoundError:
         return jsonify({"error": "data.json not found"}), 404
     except json.JSONDecodeError:
