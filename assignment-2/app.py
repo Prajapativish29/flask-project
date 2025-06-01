@@ -20,9 +20,7 @@ except PyMongoError as e:
 
 @app.route('/api/items', methods=['GET'])
 def get_items():
-    """
-    Reads data from data.json and returns it as a JSON list.
-    """
+   
     try:
         with open('data.json', 'r') as f: # 
             data = json.load(f) # 
@@ -34,17 +32,12 @@ def get_items():
 
 @app.route('/')
 def index():
-    """
-    Renders the form page.
-    """
+   
     return render_template('index.html') # 
 
 @app.route('/submit', methods=['POST'])
 def submit_data():
-    """
-    Handles form submission, inserts data into MongoDB Atlas,
-    and redirects on success or displays error on failure.
-    """
+  
     if not client: # Check if MongoDB client was initialized successfully
         return render_template('index.html', error="Database connection error. Please try again later."), 500 # 
 
@@ -68,9 +61,7 @@ def submit_data():
 
 @app.route('/success')
 def success_page():
-    """
-    Renders the success message page.
-    """
+  
     return render_template('success.html') # 
 
 if __name__ == '__main__':
